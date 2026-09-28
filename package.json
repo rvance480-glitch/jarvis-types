@@ -1,0 +1,19 @@
+{
+  "name": "jarvis-types",
+  "version": "0.1.0",
+  "description": "TypeScript type definitions for Jarvis installation and lifecycle management",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@types/node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  },
+  "license": "MIT"
+}
