@@ -37,6 +37,30 @@ npm install
 npm run build   # emits dist/index.d.ts
 ```
 
+## Install Jarvis on Windows (one click)
+
+The `windows/` folder has a setup script for [vierisid/jarvis](https://github.com/vierisid/jarvis).
+
+1. Download this repository (green **Code** button, then **Download ZIP**) and unzip it.
+2. Open the `windows` folder and double-click **Install Jarvis.cmd**.
+
+The script:
+
+1. Checks for Docker Desktop and offers to install it with `winget` if it is missing.
+2. Starts Docker Desktop and waits until it is ready.
+3. Runs the Jarvis brain in Docker on `http://localhost:3142` (restarts automatically with Docker).
+4. Creates a connection token for your PC, copies it to the clipboard, and saves a copy to your desktop.
+5. Downloads the official `jarvis-setup.exe` from the newest `sidecar-v*` release, checks it is signed by `Usejarvis Inc.`, and opens it.
+
+When the Jarvis desktop app asks for a token, press `Ctrl+V` and click **Connect**. After the in-app setup, run `docker restart jarvis` once. Delete `Jarvis connection token.txt` from your desktop after connecting.
+
+The script is safe to run again. Options (run from PowerShell):
+
+```powershell
+.\install-jarvis.ps1 -DeviceName "Office PC"   # name shown in Jarvis
+.\install-jarvis.ps1 -SkipDesktopApp          # brain and token only
+```
+
 ## Security
 
 `ProxyConfig.cfApiToken` holds a Cloudflare API token. Store it in the OS keychain or an encrypted settings file, never in source control.
